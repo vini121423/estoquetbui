@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <a href="javascript:;" class="navbar-toggle"  (click)="exibirMenu=!exibirMenu">
+                    <i class="pi pi-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <ul class="itens" [hidden]="!exibirMenu">
+        <li class="usuario"> <a href="#"><i class="pi pi-user"></i> Vini </a> </li>
+        <li class="item"> <a href="#"><i class="pi pi-home"></i> &nbsp; Home </a> </li>
+        <li class="item"> <a href="#"><i class="pi pi-table"></i> &nbsp; Produtos </a></li>
+        <li class="item"> <a href="#"><i class="pi pi-sitemap"></i> &nbsp; Categorias</a> </li>
+        <li class="item"> <a href="#" ><i class="pi pi-sign-out"></i> &nbsp; Logout </a></li>
+    </ul>
+</nav>
