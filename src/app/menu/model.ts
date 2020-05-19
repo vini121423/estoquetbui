@@ -5,6 +5,8 @@ export class Categoria{
 
 export class Produto{
     id: number;
-    nome: string;
-    categoria_id: number;
+    nome:string;
+    idcategoria: number;
+    preco:number;
+    imagem:string;
 }

@@ -1,1 +1,55 @@
-<p>produtos-pesquisa works!</p>
+<div class="container">
+    <div class="ui-g">
+        <form autocomplete="off" (ngSubmit)="pesquisar()">
+            <div class="ui-g-12">
+                <h3>
+                    Produtos
+                </h3>
+            </div>
+            <div class="ui-g-8 ui-fluid">
+                <label> Produtos:</label>
+                <input type="text" pInputText name="nome" [(ngModel)]="filtro.nome" />
+
+            </div>
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Pesquisar"></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <p-table [value]="produtos" [paginator]="true" [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros"
+            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="id">#</th>
+                    <th class="nome">Nome</th>
+                    <th class="preco">Preço</th>
+                    <th class="imagem">Imagem</th>
+                    <th class="id">#ID Categoria</th>
+                    <th class="nome">Categoria</th>
+                    <th class="acoes">Ações</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-prod>
+                <tr>
+                    <th>{{prod.id}}</th>
+                    <th>{{prod.nome}}</th>
+                    <th>{{prod.preco}}</th>
+                    <th><img src="{{prod.imagem}}" class="imagens"></th>
+                    <th>{{prod.categoria.id}}</th>
+                    <th>{{prod.categoria.nome}}</th>
+                    <th>
+                        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="ui-button-success"></a>
+                        <button pButton icon="pi pi-pencil" pTooltip="Excluir" tooltipPosition="top" class="ui-button-danger"></button>
+                    </th>
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </div>
+
+</div>
