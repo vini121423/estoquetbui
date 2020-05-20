@@ -36,16 +36,21 @@
             </ng-template>
             <ng-template pTemplate="body" let-prod>
                 <tr>
-                    <th>{{prod.id}}</th>
-                    <th>{{prod.nome}}</th>
-                    <th>{{prod.preco}}</th>
-                    <th><img src="{{prod.imagem}}" class="imagens"></th>
-                    <th>{{prod.categoria.id}}</th>
-                    <th>{{prod.categoria.nome}}</th>
-                    <th>
-                        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="ui-button-success"></a>
-                        <button pButton icon="pi pi-pencil" pTooltip="Excluir" tooltipPosition="top" class="ui-button-danger"></button>
+                    <th class="id">{{prod.id}}</th>
+                    <th class="nome">{{prod.nome}}</th>
+                    <th class="preco">{{prod.preco}}</th>
+                    <th class="imagem"><img src="{{prod.imagem}}" class="imagens"></th>
+                    <th class="id">{{prod.categoria.id}}</th>
+                    <th class="nome">{{prod.categoria.nome}}</th>
+                    <th class="acoes">
+                        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="ui-button-success dist"></a>
+                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" class="ui-button-danger"></button>
                     </th>
+                </tr>
+            </ng-template>
+            <ng-template>
+                <tr>
+                    <td colspan="7"> Nenhuma produto encontrada</td>
                 </tr>
             </ng-template>
 

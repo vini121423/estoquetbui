@@ -23,26 +23,26 @@
             [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>#</th>
-                    <th>Nome</th>
-                    <th>Ações</th>
+                    <th class="id">#</th>
+                    <th class="nome">Nome</th>
+                    <th class="acoes">Ações</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-cat>
                 <tr>
-                    <td>{{cat.id}}</td>
-                    <td>{{cat.nome}}</td>
-                    <td>
+                    <td class="id">{{cat.id}}</td>
+                    <td class="nome">{{cat.nome}}</td>
+                    <td class="acoes">
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                             class="ui-button-success"></a>
-                        <button pButton icon="pi pi-pencil" pTooltip="Excluir" tooltipPosition="top"
-                            class="ui-button-danger"></button>
+                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                            class="ui-button-danger dist"></button>
                     </td>
                 </tr>
             </ng-template>
             <ng-template>
                 <tr>
-                    <td colspan="5"> Nenhuma categoria encontrada</td>
+                    <td colspan="3"> Nenhuma categoria encontrada</td>
                 </tr>
             </ng-template>
         </p-table>
