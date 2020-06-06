@@ -8,5 +8,4 @@ export class Produto{
     nome:string;
     idcategoria: number;
     preco:number;
-    imagem:string;
 }

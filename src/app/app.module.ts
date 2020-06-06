@@ -11,28 +11,38 @@ import { ProdutosPesquisaComponent } from './produtos/produtos-pesquisa/produtos
 import { Routes, RouterModule } from '@angular/router';
 import { CategoriasModule } from './categorias/categorias.module';
 import { ProdutosModule } from './produtos/produtos.module';
+import { CategoriasCadastroComponent } from './categorias/categorias-cadastro/categorias-cadastro.component';
+import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos-cadastro.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
-  {path: 'categorias', component:CategoriasPesquisaComponent},
-  {path: 'produtos', component:ProdutosPesquisaComponent}
+  {path: 'categorias', component: CategoriasPesquisaComponent},
+  {path: 'categorias', component: CategoriasCadastroComponent},
+  {path: 'produtos', component: ProdutosCadastroComponent},
+  {path: 'produtos', component: ProdutosPesquisaComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
+    CategoriasCadastroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     MenuModule,
     HttpClientModule,
     CategoriasModule,
-    ProdutosModule
+    ProdutosModule,
+    ConfirmDialogModule
    
   ],
-  providers: [CategoriasService,ProdutosService],
+  providers: [CategoriasService,ProdutosService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

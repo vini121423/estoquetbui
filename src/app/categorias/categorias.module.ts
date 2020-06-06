@@ -6,12 +6,13 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
+import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component';
 
 
 
 
 @NgModule({
-  declarations: [CategoriasPesquisaComponent],
+  declarations: [CategoriasPesquisaComponent, CategoriasCadastroComponent],
   exports: [CategoriasPesquisaComponent],
   imports: [
     CommonModule,

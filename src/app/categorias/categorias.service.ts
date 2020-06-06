@@ -38,4 +38,8 @@ export class CategoriasService {
       return resultado
     });
   }
+
+  excluir(id:number): Promise<void>{
+    return this.http.delete(`${this.categoriasUrl}/${id}`).toPromise().then(() => null);
+  }
 }

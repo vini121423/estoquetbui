@@ -21,15 +21,13 @@
 <div class="ui-g">
     <div class="ui-g-12">
         <p-table [value]="produtos" [paginator]="true" [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros"
-            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)">
+            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)" #tabela>
 
             <ng-template pTemplate="header">
                 <tr>
                     <th class="id">#</th>
                     <th class="nome">Nome</th>
                     <th class="preco">Preço</th>
-                    <th class="imagem">Imagem</th>
-                    <th class="id">#ID Categoria</th>
                     <th class="nome">Categoria</th>
                     <th class="acoes">Ações</th>
                 </tr>
@@ -39,8 +37,6 @@
                     <th class="id">{{prod.id}}</th>
                     <th class="nome">{{prod.nome}}</th>
                     <th class="preco">{{prod.preco}}</th>
-                    <th class="imagem"><img src="{{prod.imagem}}" class="imagens"></th>
-                    <th class="id">{{prod.categoria.id}}</th>
                     <th class="nome">{{prod.categoria.nome}}</th>
                     <th class="acoes">
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" class="ui-button-success dist"></a>
@@ -50,10 +46,9 @@
             </ng-template>
             <ng-template>
                 <tr>
-                    <td colspan="7"> Nenhuma produto encontrada</td>
+                    <td colspan="5"> Nenhuma produto encontrada</td>
                 </tr>
             </ng-template>
-
         </p-table>
     </div>
 

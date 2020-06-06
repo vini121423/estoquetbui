@@ -20,7 +20,7 @@
 <div class="ui-g">
     <div class="ui-g-12">
         <p-table [value]="categorias" [paginator]="true" [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros"
-            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)">
+            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)" #tabela>
             <ng-template pTemplate="header">
                 <tr>
                     <th class="id">#</th>
@@ -36,7 +36,7 @@
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                             class="ui-button-success"></a>
                         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
-                            class="ui-button-danger dist"></button>
+                            class="ui-button-danger dist" (click)="confirmarExclusao(cat)"></button>
                     </td>
                 </tr>
             </ng-template>
