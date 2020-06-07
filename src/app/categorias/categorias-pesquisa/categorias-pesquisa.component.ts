@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CategoriaFiltro, CategoriasService } from '../categorias.service';
-import { LazyLoadEvent, ConfirmationService } from 'primeng/api';
+import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api';
+import { ErrorHandlerService } from 'src/app/menu/error-handler.service';
 
 @Component({
   selector: 'app-categorias-pesquisa',
@@ -17,7 +18,9 @@ export class CategoriasPesquisaComponent implements OnInit {
 
   @ViewChild('tabela', { static: true }) grid;
   constructor(private categoriasService: CategoriasService,
-    private confirmation: ConfirmationService) { }
+    private confirmation: ConfirmationService,
+    private message: MessageService,
+    private errorHandler: ErrorHandlerService) { }
 
   ngOnInit() {
     this.pesquisar();
@@ -40,9 +43,10 @@ export class CategoriasPesquisaComponent implements OnInit {
       } else {
         this.grid.first = 0;
       }
+      this.message.add({severity: 'success',detail:'Categoria excluída',summary:'Atenção'})
     }
     )
-
+    .catch(erro => this.errorHandler.handle(erro));
   }
 
   pesquisar(pagina = 0) {
