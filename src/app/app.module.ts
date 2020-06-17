@@ -14,9 +14,10 @@ import { ProdutosModule } from './produtos/produtos.module';
 import { CategoriasCadastroComponent } from './categorias/categorias-cadastro/categorias-cadastro.component';
 import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos-cadastro.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService,MessageService } from 'primeng/api';
+import { ConfirmationService,MessageService} from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
+import { ErrorHandlerService } from './menu/error-handler.service';
 
 
 
@@ -45,7 +46,7 @@ const routes: Routes = [
     ToastModule
    
   ],
-  providers: [CategoriasService,ProdutosService,ConfirmationService,MessageService],
+  providers: [CategoriasService,ProdutosService,ConfirmationService,MessageService,ErrorHandlerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

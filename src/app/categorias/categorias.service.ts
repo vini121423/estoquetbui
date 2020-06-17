@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Categoria } from '../menu/model';
 
 
 export class CategoriaFiltro {
@@ -41,5 +42,9 @@ export class CategoriasService {
 
   excluir(id:number): Promise<void>{
     return this.http.delete(`${this.categoriasUrl}/${id}`).toPromise().then(() => null);
+  }
+
+  adicionar(categoria: Categoria): Promise<Categoria>{
+    return this.http.post<Categoria>(this.categoriasUrl, categoria).toPromise();
   }
 }
