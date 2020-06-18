@@ -6,8 +6,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,9 @@ import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro
     InputTextModule,
     ButtonModule,
     TableModule,
-    TooltipModule
+    TooltipModule,
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ProdutosModule { }

@@ -1,1 +1,26 @@
-<p>produtos-cadastro works!</p>
+<div class="container">
+    <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h1> Cadastrar Produto:</h1>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label> Nome</label>
+                <input pInputText type="text" name="nome" formControlName="nome">
+
+
+                <label>Preço</label>
+                <input pInputText type="number" name="preco" formControlName="preco">
+
+                <label>Categoria</label>
+                <input pInputText type="number" name="idcategoria" formControlName="idcategoria">
+            </div>
+
+            <div class="ui-g-12 ui-fluid">
+                <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid"></button>
+                <button pButton type="button" label="Nova"></button>
+                <a routerLink="/produtos">Voltar para a Pesquisa</a>
+            </div>
+        </div>
+    </form>
+</div>
