@@ -24,7 +24,9 @@ import { ErrorHandlerService } from './menu/error-handler.service';
 const routes: Routes = [
   {path: 'categorias', component: CategoriasPesquisaComponent},
   {path: 'categorias/nova', component: CategoriasCadastroComponent},
+  {path: 'categorias/:id', component: CategoriasCadastroComponent},
   {path: 'produtos/novo', component: ProdutosCadastroComponent},
+  {path: 'produtos/:id', component: ProdutosCadastroComponent},
   {path: 'produtos', component: ProdutosPesquisaComponent}
 ]
 

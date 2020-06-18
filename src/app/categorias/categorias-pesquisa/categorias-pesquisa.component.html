@@ -34,7 +34,7 @@
                     <td class="nome">{{cat.nome}}</td>
                     <td class="acoes">
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
-                            class="ui-button-success"></a>
+                            [routerLink]="['/categorias',cat.id]" class="ui-button-success"></a>
                         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
                             class="ui-button-danger dist" (click)="confirmarExclusao(cat)"></button>
                     </td>

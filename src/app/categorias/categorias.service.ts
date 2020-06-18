@@ -40,11 +40,25 @@ export class CategoriasService {
     });
   }
 
-  excluir(id:number): Promise<void>{
+  excluir(id: number): Promise<void> {
     return this.http.delete(`${this.categoriasUrl}/${id}`).toPromise().then(() => null);
   }
 
-  adicionar(categoria: Categoria): Promise<Categoria>{
+  adicionar(categoria: Categoria): Promise<Categoria> {
     return this.http.post<Categoria>(this.categoriasUrl, categoria).toPromise();
+  }
+
+  alterar(categoria: Categoria): Promise<Categoria> {
+    return this.http.put<Categoria>(`${this.categoriasUrl}/${categoria.id}`, categoria).toPromise().then(response => {
+      const categoriaAlterada = response;
+      return categoriaAlterada;
+    })
+  }
+
+  buscarPorId(id: number): Promise<Categoria> {
+    return this.http.get<Categoria>(`${this.categoriasUrl}/${id}`).toPromise().then(response => {
+      const categoria = response;
+      return categoria;
+    });
   }
 }
