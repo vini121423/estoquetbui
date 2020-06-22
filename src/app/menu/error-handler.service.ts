@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from 'primeng/api/public_api';
+import { MessageService } from 'primeng/api';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({

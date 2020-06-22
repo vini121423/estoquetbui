@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProdutoFiltro, ProdutosService } from '../produtos.service';
-import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api/public_api';
+import { LazyLoadEvent, ConfirmationService, MessageService } from 'primeng/api';
 import { ErrorHandlerService } from 'src/app/menu/error-handler.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProdutosPesquisaComponent implements OnInit {
     this.filtro.pagina = pagina;
     this.produtosService.pesquisar(this.filtro).then(resultado => {
       this.totalRegistros = resultado.total;
-      this.produtos = resultado.produtos;
+      this.produtos = resultado.produtos
     });
   }
 
@@ -54,7 +54,7 @@ export class ProdutosPesquisaComponent implements OnInit {
       } else {
         this.grid.first = 0;
       }
-      this.message.add({ severity: 'success', detail: 'Produto excluido', summary: 'Atenção' })
+      this.message.add({ severity: 'success', detail: 'Produto excluido', summary: 'Atenção' });
     }).catch(erro => this.errorHandler.handle(erro));
   }
 

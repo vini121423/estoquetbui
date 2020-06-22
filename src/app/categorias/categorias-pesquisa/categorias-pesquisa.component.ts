@@ -43,7 +43,7 @@ export class CategoriasPesquisaComponent implements OnInit {
       } else {
         this.grid.first = 0;
       }
-      this.message.add({severity: 'success',detail:'Categoria excluída',summary:'Atenção'})
+      this.message.add({severity: 'success',detail:'Categoria excluída',summary:'Atenção'});
     }
     )
     .catch(erro => this.errorHandler.handle(erro));

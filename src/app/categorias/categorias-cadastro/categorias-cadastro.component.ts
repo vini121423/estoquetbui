@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, SelectControlValueAccessor } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { CategoriasService } from '../categorias.service';
 import { MessageService } from 'primeng/api';
 import { Router, ActivatedRoute } from '@angular/router';

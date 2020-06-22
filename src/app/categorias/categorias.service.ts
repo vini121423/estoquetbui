@@ -36,7 +36,7 @@ export class CategoriasService {
         categorias,
         total: response.totalElements
       }
-      return resultado
+      return resultado;
     });
   }
 
