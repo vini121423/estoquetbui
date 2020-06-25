@@ -6,6 +6,6 @@ export class Categoria{
 export class Produto{
     id: number;
     nome:string;
-    idcategoria: number;
     preco:number;
+    categoria = new Categoria();
 }

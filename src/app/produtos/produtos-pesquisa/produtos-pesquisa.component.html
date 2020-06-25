@@ -28,7 +28,8 @@
                     <th class="id">#</th>
                     <th class="nome">Nome</th>
                     <th class="preco">Preço</th>
-                    <th class="nome">Categoria</th>
+                    <th class="id">#Categoria</th>
+                     <th class="nome">Nome</th>
                     <th class="acoes">Ações</th>
                 </tr>
             </ng-template>
@@ -37,7 +38,8 @@
                     <th class="id">{{prod.id}}</th>
                     <th class="nome">{{prod.nome}}</th>
                     <th class="preco">{{prod.preco}}</th>
-                    <th class="nome">{{prod.idcategoria}}</th>
+                    <th class="id">{{prod.categoria.id}}</th>
+                    <th class="nome">{{prod.categoria.nome}}</th>
                     <th class="acoes">
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
                             class="ui-button-success dist" [routerLink]="['/produtos',prod.id]"></a>
