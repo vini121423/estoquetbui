@@ -51,7 +51,7 @@ export class ProdutosCadastroComponent implements OnInit {
    }
 
    get atualizando(){
-     return Boolean(this.formulario.get('id').value)
+     return Boolean(this.formulario.get('id').value);
    }
 
    salvar(){
