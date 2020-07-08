@@ -61,4 +61,8 @@ export class CategoriasService {
       return categoria;
     });
   }
+
+  litarTodasCategorias(): Promise<Categoria[]>{
+    return this.http.get<Categoria[]>(`${this.categoriasUrl}/todas`).toPromise();
+  } 
 }

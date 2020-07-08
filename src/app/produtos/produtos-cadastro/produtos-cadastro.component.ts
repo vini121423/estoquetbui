@@ -4,6 +4,7 @@ import { MessageService } from 'primeng/api';
 import { ProdutosService } from '../produtos.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from 'src/app/menu/error-handler.service';
+import { CategoriasService } from 'src/app/categorias/categorias.service';
 
 @Component({
   selector: 'app-produtos-cadastro',
@@ -11,10 +12,13 @@ import { ErrorHandlerService } from 'src/app/menu/error-handler.service';
   styleUrls: ['./produtos-cadastro.component.css']
 })
 export class ProdutosCadastroComponent implements OnInit {
+  produtos = [];
+  categorias =[];
   formulario: FormGroup;
 
 
   constructor(
+    private categoriaService: CategoriasService,
      private message: MessageService,
      private produtosService: ProdutosService,
      private router: Router,
@@ -46,13 +50,25 @@ export class ProdutosCadastroComponent implements OnInit {
        id:[],
        nome:[null,[Validators.required,Validators.maxLength(100)]],
        preco:[null,[Validators.required]],
-       idcategoria:[null,[Validators.required]]
+       categoria: this.formBuilder.group({
+         id:[null, Validators.required],
+         nome:[]
+       })
      }) 
    }
+
+
 
    get atualizando(){
      return Boolean(this.formulario.get('id').value);
    }
+
+   carregarCategorias(){
+      return this.categoriaService.litarTodasCategorias().then(categorias =>{
+        this.categorias = categorias
+        .map(c =>({label: c.nome,valu: c.id}))
+      }).catch(erro => this.errorHandler.handle(erro));
+   } 
 
    salvar(){
      if(this.atualizando){
