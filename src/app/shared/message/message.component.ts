@@ -24,6 +24,6 @@ export class MessageComponent {
 
 
       temErro(): boolean {
-         return this.control.hasError(this.error) && this.control.dirty;
+         return this.control.hasError(this.error) && (this.control.dirty || this.control.touched);
       }
 }

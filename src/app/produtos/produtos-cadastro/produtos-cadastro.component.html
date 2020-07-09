@@ -1,4 +1,4 @@
-<div class="container">
+﻿<div class="container">
     <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
         <div class="ui-g">
             <div class="ui-g-12">
@@ -24,7 +24,7 @@
             <div class="ui-g-12 ui-md-9 ui-fluid" formGroupName="categoria">
                 <label>Categoria</label>
                 <p-dropdown name="categorias" placeholder="Selecione a Categoria" [options]="categorias" [filter]="true" formControlName="id"> </p-dropdown>
-                <app-message [control]="formulario.get('id')" error="required"
+                <app-message [control]="formulario.get('categoria.id')" error="required"
                     text="Informe a identificação do produto"></app-message>
             </div>
 
